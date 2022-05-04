@@ -1,0 +1,13 @@
+{
+  "name": "fastify-problem",
+  "version": "1.0.0",
+  "main": "index.js",
+  "repository": "https://github.com/budarin/fastify-problem.git",
+  "author": "Vadim Budarin <budarin-vv@yandex.ru>",
+  "license": "MIT",
+  "dependencies": {
+    "@fastify/cookie": "^6.0.0",
+    "fastify": "^3.29.0",
+    "fastify-plugin": "^3.0.1"
+  }
+}
