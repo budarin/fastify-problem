@@ -2,15 +2,9 @@ const Fastify = require("fastify");
 const cookiePlugin = require("@fastify/cookie");
 const securityChecksPlugin = require("./plugin");
 
-const app = Fastify({
-  logger: true,
-});
+const app = Fastify({ logger: true });
 
-app
-  .register(cookiePlugin, {
-    secret: [`key1`],
-  })
-  .register(securityChecksPlugin);
+app.register(cookiePlugin, { secret: [`key1`] }).register(securityChecksPlugin);
 
 app.ready(() => {
   console.error(app.printPlugins());
