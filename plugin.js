@@ -2,7 +2,7 @@ const fastifyPlugin = require("fastify-plugin");
 
 const cookieContent = "sid-cookie-value";
 
-const securityChecksPlugin = async (fastifyInstance) => {
+const securityChecksPlugin = (fastifyInstance, option, done) => {
   const checkSid = async (req, reply) => {
     const sidCookie = req.cookies["sid"];
 
@@ -20,6 +20,8 @@ const securityChecksPlugin = async (fastifyInstance) => {
   };
 
   fastifyInstance.decorate("checkSid", checkSid);
+
+  done();
 };
 
 module.exports = fastifyPlugin(securityChecksPlugin, {

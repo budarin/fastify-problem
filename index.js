@@ -14,14 +14,14 @@ app.route({
   method: "GET",
   url: "/",
 
-  //   onRequest: app.checkSid,
+  onRequest: app.checkSid,
 
-  onRequest: (req, reply, done) => {
-    void app.checkSid(req, reply).then(
-      () => done(),
-      (err) => done(err)
-    );
-  },
+  // onRequest: (req, reply, done) => {
+  //   void app.checkSid(req, reply).then(
+  //     () => done(),
+  //     (err) => done(err)
+  //   );
+  // },
 
   handler: async (req) => {
     return { hello: "world" };
